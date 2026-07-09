@@ -11,5 +11,10 @@
     "lint": "biome check .",
     "format": "biome format --write ."
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
 }

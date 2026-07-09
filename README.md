@@ -6,7 +6,7 @@ The developer data transformation toolkit. One input, infinite outputs.
 
 ## Roadmap
 
-- [ ] JSON → TypeScript interfaces
+- [x] JSON → TypeScript interfaces
 - [ ] JSON → Zod schemas
 - [ ] JSON → GraphQL types
 - [ ] JSON → OpenAPI specs
