@@ -9,11 +9,14 @@ describe('resolveFormat', () => {
   it('resolves canonical format names', () => {
     expect(resolveFormat('typescript')?.format).toBe('typescript');
     expect(resolveFormat('zod')?.format).toBe('zod');
+    expect(resolveFormat('openapi')?.format).toBe('openapi');
   });
 
   it('resolves aliases to their canonical definition', () => {
     expect(resolveFormat('ts')?.format).toBe('typescript');
     expect(resolveFormat('tsx')?.format).toBe('typescript');
+    expect(resolveFormat('oas')?.format).toBe('openapi');
+    expect(resolveFormat('oas3')?.format).toBe('openapi');
   });
 
   it('is case-insensitive and trims whitespace', () => {
@@ -32,6 +35,7 @@ describe('listFormats', () => {
     expect(listFormats().map((def) => def.format)).toEqual([
       'typescript',
       'zod',
+      'openapi',
     ]);
   });
 });

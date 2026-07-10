@@ -9,7 +9,7 @@ The developer data transformation toolkit. One input, infinite outputs.
 - [x] JSON → TypeScript interfaces
 - [ ] JSON → Zod schemas
 - [ ] JSON → GraphQL types
-- [ ] JSON → OpenAPI specs
+- [x] JSON → OpenAPI 3.1 schemas
 - [ ] JSON → SQL schemas
 - [ ] JSON → C# classes
 - [ ] Mock data generation from schemas

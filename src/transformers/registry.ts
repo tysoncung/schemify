@@ -3,11 +3,12 @@
 // name or alias, so adding a new transformer only means adding one entry.
 
 import type { TransformResult } from '../types';
+import { jsonToOpenApi } from './openapi';
 import { jsonToTypescript } from './typescript';
 import { jsonToZod } from './zod';
 
 /** The canonical name of every output format Schemify can generate. */
-export type Format = 'typescript' | 'zod';
+export type Format = 'typescript' | 'zod' | 'openapi';
 
 /** Options shared by every format's transformer. */
 export interface FormatOptions {
@@ -46,6 +47,13 @@ export const FORMATS: readonly FormatDefinition[] = [
     extension: 'ts',
     aliases: [],
     transform: jsonToZod,
+  },
+  {
+    format: 'openapi',
+    label: 'OpenAPI',
+    extension: 'json',
+    aliases: ['oas', 'oas3'],
+    transform: jsonToOpenApi,
   },
 ];
 
