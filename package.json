@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "JSON → TypeScript, Zod, GraphQL, OpenAPI, SQL, C#, and more. Developer data transformation toolkit.",
   "type": "module",
+  "bin": {
+    "schemify": "dist/cli.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -14,6 +17,7 @@
   "private": true,
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@types/node": "^26.1.1",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10",
     "zod": "^4.4.3"

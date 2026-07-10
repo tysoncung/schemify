@@ -16,4 +16,19 @@ The developer data transformation toolkit. One input, infinite outputs.
 - [ ] API diff viewer (v1 vs v2)
 - [ ] Schema comparison
 - [ ] Data anonymizer
-- [ ] Bulk batch processing (CLI)
+- [x] Bulk batch processing (CLI)
+
+## CLI
+
+Read JSON from files, URLs, or stdin and generate one or more formats:
+
+```sh
+schemify user.json                    # TypeScript to stdout
+schemify -f ts,zod user.json          # multiple formats
+cat user.json | schemify --format zod # from stdin
+schemify -u https://api.example.com/user.json -f zod
+schemify -f ts,zod -o generated a.json b.json  # batch, write to a directory
+```
+
+Run `schemify --help` for the full list of options, or `schemify --list-formats`
+to see the available output formats.
