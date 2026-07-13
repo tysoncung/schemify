@@ -17,6 +17,22 @@ The developer data transformation toolkit. One input, infinite outputs.
 - [ ] Schema comparison
 - [ ] Data anonymizer
 - [x] Bulk batch processing (CLI)
+- [x] Web UI playground
+
+## Web UI
+
+A browser playground: paste JSON on the left, pick an output format, and see the
+generated code on the right.
+
+```sh
+npm run dev      # start the dev server
+npm run build    # type-check and bundle to dist/
+npm run preview  # serve the production build
+```
+
+The interface is a thin DOM layer over a framework-agnostic core
+(`src/transformers/playground.ts`), so the paste → transform → render logic is
+fully unit-tested without a browser and can back other front-ends too.
 
 ## CLI
 

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schemify — JSON to TypeScript, Zod, OpenAPI, and more</title>
+    <style>
+      :root {
+        --bg: #0f1115;
+        --panel: #171a21;
+        --border: #262b36;
+        --text: #e6e9ef;
+        --muted: #8b93a3;
+        --accent: #6ea8fe;
+        --error: #ff6b6b;
+        --ok: #4ade80;
+        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+          monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+      header {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      header h1 {
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+      }
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      main {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 0;
+      }
+      .pane {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        min-height: 0;
+      }
+      .pane + .pane {
+        border-left: 1px solid var(--border);
+      }
+      .pane-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        border-bottom: 1px solid var(--border);
+        background: var(--panel);
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .pane-header .grow {
+        flex: 1;
+      }
+      label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--muted);
+      }
+      select,
+      input[type="text"] {
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 13px;
+      }
+      input[type="text"] {
+        width: 120px;
+      }
+      #input,
+      #output {
+        flex: 1;
+        margin: 0;
+        padding: 16px;
+        border: 0;
+        overflow: auto;
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.5;
+        background: transparent;
+        color: var(--text);
+        white-space: pre;
+        tab-size: 2;
+      }
+      #input {
+        resize: none;
+        outline: none;
+      }
+      #input::placeholder {
+        color: var(--muted);
+      }
+      #output.placeholder {
+        color: var(--muted);
+      }
+      .status {
+        font-variant-numeric: tabular-nums;
+      }
+      .status.error {
+        color: var(--error);
+      }
+      .status.ok {
+        color: var(--ok);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Schemify</h1>
+      <p>Paste JSON on the left, pick a format, get typed code on the right.</p>
+    </header>
+    <main>
+      <section class="pane">
+        <div class="pane-header">
+          <span class="grow">JSON input</span>
+        </div>
+        <textarea
+          id="input"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder='{ "id": 1, "name": "Ada" }'
+        ></textarea>
+      </section>
+      <section class="pane">
+        <div class="pane-header">
+          <label>
+            Format
+            <select id="format"></select>
+          </label>
+          <label>
+            Root name
+            <input id="root-name" type="text" placeholder="Root" />
+          </label>
+          <label>
+            <input id="export" type="checkbox" checked />
+            export
+          </label>
+          <span class="grow"></span>
+          <span id="status" class="status idle"></span>
+        </div>
+        <pre id="output"></pre>
+      </section>
+    </main>
+    <script type="module" src="/src/web/main.ts"></script>
+  </body>
+</html>

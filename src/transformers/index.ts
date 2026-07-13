@@ -2,6 +2,7 @@
 
 export * from './batch';
 export * from './openapi';
+export * from './playground';
 export * from './registry';
 export * from './typescript';
 export * from './zod';
