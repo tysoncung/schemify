@@ -16,6 +16,7 @@ describe('formatChoices', () => {
       { format: 'typescript', label: 'TypeScript' },
       { format: 'zod', label: 'Zod' },
       { format: 'openapi', label: 'OpenAPI' },
+      { format: 'markdown', label: 'Markdown' },
     ]);
   });
 });

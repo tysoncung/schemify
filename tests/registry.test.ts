@@ -10,6 +10,7 @@ describe('resolveFormat', () => {
     expect(resolveFormat('typescript')?.format).toBe('typescript');
     expect(resolveFormat('zod')?.format).toBe('zod');
     expect(resolveFormat('openapi')?.format).toBe('openapi');
+    expect(resolveFormat('markdown')?.format).toBe('markdown');
   });
 
   it('resolves aliases to their canonical definition', () => {
@@ -17,6 +18,7 @@ describe('resolveFormat', () => {
     expect(resolveFormat('tsx')?.format).toBe('typescript');
     expect(resolveFormat('oas')?.format).toBe('openapi');
     expect(resolveFormat('oas3')?.format).toBe('openapi');
+    expect(resolveFormat('md')?.format).toBe('markdown');
   });
 
   it('is case-insensitive and trims whitespace', () => {
@@ -36,6 +38,7 @@ describe('listFormats', () => {
       'typescript',
       'zod',
       'openapi',
+      'markdown',
     ]);
   });
 });

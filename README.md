@@ -10,6 +10,7 @@ The developer data transformation toolkit. One input, infinite outputs.
 - [ ] JSON → Zod schemas
 - [ ] JSON → GraphQL types
 - [x] JSON → OpenAPI 3.1 schemas
+- [x] JSON → Markdown documentation
 - [ ] JSON → SQL schemas
 - [ ] JSON → C# classes
 - [ ] Mock data generation from schemas
