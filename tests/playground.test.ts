@@ -15,6 +15,7 @@ describe('formatChoices', () => {
     expect(formatChoices()).toEqual([
       { format: 'typescript', label: 'TypeScript' },
       { format: 'zod', label: 'Zod' },
+      { format: 'graphql', label: 'GraphQL' },
       { format: 'openapi', label: 'OpenAPI' },
       { format: 'markdown', label: 'Markdown' },
     ]);
@@ -58,10 +59,10 @@ describe('transform', () => {
   });
 
   it('reports an error for an unknown format', () => {
-    const output = transform('{"id": 1}', 'graphql');
+    const output = transform('{"id": 1}', 'protobuf');
     expect(output).toEqual({
       status: 'error',
-      message: 'Unknown format: graphql',
+      message: 'Unknown format: protobuf',
     });
   });
 

@@ -53,11 +53,11 @@ describe('processBatch', () => {
   });
 
   it('reports an unknown format as an error result', () => {
-    const results = processBatch([user], ['graphql' as never]);
+    const results = processBatch([user], ['protobuf' as never]);
     expect(results[0]).toMatchObject({
-      format: 'graphql',
+      format: 'protobuf',
       code: null,
-      error: 'Unknown format: graphql',
+      error: 'Unknown format: protobuf',
     });
   });
 

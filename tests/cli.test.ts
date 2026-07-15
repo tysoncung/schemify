@@ -72,7 +72,7 @@ describe('parseArgs', () => {
   });
 
   it('throws on an unknown format', () => {
-    expect(() => parseArgs(['-f', 'graphql'])).toThrow(/Unknown format/);
+    expect(() => parseArgs(['-f', 'protobuf'])).toThrow(/Unknown format/);
   });
 
   it('throws when a flag is missing its value', () => {

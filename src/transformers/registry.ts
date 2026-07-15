@@ -3,13 +3,14 @@
 // name or alias, so adding a new transformer only means adding one entry.
 
 import type { TransformResult } from '../types';
+import { jsonToGraphql } from './graphql';
 import { jsonToMarkdown } from './markdown';
 import { jsonToOpenApi } from './openapi';
 import { jsonToTypescript } from './typescript';
 import { jsonToZod } from './zod';
 
 /** The canonical name of every output format Schemify can generate. */
-export type Format = 'typescript' | 'zod' | 'openapi' | 'markdown';
+export type Format = 'typescript' | 'zod' | 'graphql' | 'openapi' | 'markdown';
 
 /** Options shared by every format's transformer. */
 export interface FormatOptions {
@@ -48,6 +49,13 @@ export const FORMATS: readonly FormatDefinition[] = [
     extension: 'ts',
     aliases: [],
     transform: jsonToZod,
+  },
+  {
+    format: 'graphql',
+    label: 'GraphQL',
+    extension: 'graphql',
+    aliases: ['gql'],
+    transform: jsonToGraphql,
   },
   {
     format: 'openapi',
