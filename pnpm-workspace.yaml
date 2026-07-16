@@ -1,0 +1,14 @@
+# pnpm workspace configuration.
+#
+# Schemify currently ships as a single package (the repository root), but
+# declaring a workspace lets us add sibling packages under packages/* later
+# without reworking the install tooling.
+packages:
+  - '.'
+  - 'packages/*'
+allowBuilds:
+  '@biomejs/biome': true
+# Allow Biome to run its install script, which fetches the platform-specific
+# native binary. Biome is our linter/formatter and is a trusted dependency.
+onlyBuiltDependencies:
+  - '@biomejs/biome'

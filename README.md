@@ -26,9 +26,10 @@ A browser playground: paste JSON on the left, pick an output format, and see the
 generated code on the right.
 
 ```sh
-npm run dev      # start the dev server
-npm run build    # type-check and bundle to dist/
-npm run preview  # serve the production build
+pnpm install     # install dependencies (pnpm is the package manager)
+pnpm dev         # start the dev server
+pnpm build       # type-check and bundle to dist/
+pnpm preview     # serve the production build
 ```
 
 The interface is a thin DOM layer over a framework-agnostic core
