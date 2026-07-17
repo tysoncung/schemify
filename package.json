@@ -18,8 +18,11 @@
     "test": "vitest",
     "test:run": "vitest run",
     "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "check": "pnpm run lint && pnpm run build && pnpm run test:run"
+    "format:check": "biome format .",
+    "ci": "biome ci .",
+    "check": "pnpm run lint && pnpm run format:check && pnpm run build && pnpm run test:run"
   },
   "private": true,
   "devDependencies": {
